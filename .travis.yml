@@ -5,8 +5,12 @@ go:
   - "1.11.x"
   # - "master"
 
+env:
+  - GO111MODULE=on
+
 before_install:
   - curl -L https://git.io/vp6lP | sed 's/install -d "${BINDIR}"//' | sh -s -- -b "${GOPATH}/bin"
+  - go list -e $(go list -m all)
 
 script:
   - "make validate"

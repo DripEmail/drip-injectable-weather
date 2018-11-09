@@ -1,5 +1,5 @@
 validate:
-	gometalinter --vendor --skip=vendor --deadline=180s ./...
+	gometalinter --exclude '\.\.' --deadline=180s ./...
 
 test:
 	go test ./... -coverprofile coverage.out

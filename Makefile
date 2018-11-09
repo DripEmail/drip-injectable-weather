@@ -1,5 +1,5 @@
 validate:
-	gometalinter --exclude '\.\.' --deadline=180s ./...
+	gometalinter --exclude 'pkg/mod' --deadline=180s ./...
 
 test:
 	go test ./... -coverprofile coverage.out
